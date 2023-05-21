@@ -14,29 +14,29 @@ w=1200
 h=1200
 length_of_square = w//num_of_square
 
-turret = pygame.image.load('turret.png')
-fireball = pygame.image.load('fireball.png')
-knight = pygame.image.load('knight.png')
+arrow = pygame.image.load('arrow.png')
+cpu = pygame.image.load('cpu.png')
+virus = pygame.image.load('virus.png')
 DEFAULT_IMAGE_SIZE = (length_of_square, length_of_square)
-turret = pygame.transform.scale(turret, DEFAULT_IMAGE_SIZE)
-fireball = pygame.transform.scale(fireball, DEFAULT_IMAGE_SIZE)
-knight = pygame.transform.scale(knight, DEFAULT_IMAGE_SIZE)
+arrow = pygame.transform.scale(arrow, DEFAULT_IMAGE_SIZE)
+cpu = pygame.transform.scale(cpu, DEFAULT_IMAGE_SIZE)
+virus = pygame.transform.scale(virus, DEFAULT_IMAGE_SIZE)
 
 x = 3
 y = 3
 
 pygame.init()
 screen = pygame.display.set_mode((w, h))
-pygame.display.set_caption("turret game")
+pygame.display.set_caption("arrow game")
 
 
-screen.fill(white)
+screen.fill(black)
 
 
 def draw_grid():
    for i in range(0, w, length_of_square):
-      pygame.draw.line(screen, black, (i,0), (i,h))
-      pygame.draw.line(screen, black, (0,i), (w,i))
+      pygame.draw.line(screen, green, (i,0), (i,h))
+      pygame.draw.line(screen, green, (0,i), (w,i))
 
 def draw_on_grid(x, y, image):
    x = length_of_square * x
@@ -48,10 +48,10 @@ def draw_on_grid(x, y, image):
 
 for i in range(num_of_square):
    for j in range(num_of_square):
-      draw_on_grid(i, j, knight)
+      draw_on_grid(i, j, virus)
 draw_grid()
-draw_on_grid(1, 2, fireball)
-draw_on_grid(5, 5, turret)
+draw_on_grid(1, 2, cpu)
+draw_on_grid(5, 5, arrow)
 
 pygame.display.update()
 
@@ -64,8 +64,8 @@ while True:
 
       if event.type == pygame.KEYDOWN: 
          if event.key == pygame.K_a:
-            turret = pygame.transform.rotate(turret, 90)
-            screen.fill(white)
-            screen.blit(turret, (x,y))
+            arrow = pygame.transform.rotate(arrow, 90)
+            screen.fill(black)
+            screen.blit(arrow, (x,y))
             draw_grid()
             pygame.display.update()
