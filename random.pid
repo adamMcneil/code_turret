@@ -1,0 +1,5 @@
+function main
+    face_random
+    forward
+    main
+end

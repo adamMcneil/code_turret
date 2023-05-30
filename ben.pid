@@ -1,0 +1,48 @@
+function main
+    w
+end
+
+function w_helper
+    forward
+end
+
+function w
+    rotate
+    jump if up w_helper w
+end
+
+function a
+    rotate
+    jump if up a_helper a
+end
+
+function s
+    rotate
+    jump if up s_helper s
+end
+
+function d
+    rotate
+    jump if up d_helper d
+end
+
+function d_helper
+    rotate
+    forward
+end
+
+function s_helper
+    rotate
+    rotate
+    forward
+end
+
+function a_helper
+    rotate
+    rotate
+    rotate
+    forward
+end
+
+function do_nothing
+end

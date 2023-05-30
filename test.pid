@@ -1,0 +1,68 @@
+function main
+    force_right
+    baf_right
+end
+
+function baf_right
+    jump if wall on_wall_right
+    forward
+    baf_left
+end
+
+function baf_left
+    jump if wall on_wall_left
+    forward
+    baf_right
+end
+
+function on_wall_right
+    force_down
+    jump if wall do_nothing
+    forward
+    force_left
+    baf_left
+end
+
+function on_wall_left
+    force_down
+    jump if wall do_nothing
+    forward
+    force_right
+    baf_right
+end
+
+function do_nothing
+end
+
+function force_right
+    jump if up right
+    rotate
+    force_right
+end
+
+function force_left
+    jump if up left
+    rotate
+    force_left
+end
+
+function force_down
+    jump if up down
+    rotate
+    force_down
+end
+
+function right
+    rotate
+end
+
+function down
+    rotate
+    rotate
+end
+
+function left
+    rotate
+    rotate
+    rotate
+end
